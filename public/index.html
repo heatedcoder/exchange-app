@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="exchangeApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <div ng-controller="exchangeCtrl" style="background-color:black">
+        <div class="col-md-5 col-md-offset-1 price-boxes">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table>
+                            <tr style="text-align:center">
+                                <td style="width:200px;color:white">
+                                        <b>EXCHANGES</b>
+                                </td>
+                                <td style="width:200px;color:white">
+                                    GDX
+                                </td>
+                                <td style="width:200px;color:white">
+                                    BINANCE
+                                </td>
+                            </tr>
+                            <tr style="text-align:center">
+                                <td><i> BTC-USD</i></td>
+                                <td><span ng-bind="gdax.btc.usd"/></td>
+                                <td style="width:100px" >
+                                    <span ng-bind="binance.btc.usd"/>
+                                </td>
+                            </tr>
+                            <tr style="text-align:center">
+                                <td><i> BTC-EUR</i></td>
+                                <td><span ng-bind="gdax.btc.eur"/></td>
+                                <td><span id="btceurB"/></td>
+                            </tr>
+                            <tr style="text-align:center">
+                                <td><i> ETH-USD</i></td>
+                                <td><span ng-bind="gdax.eth.usd"/></td>
+                                <td><span ng-bind="binance.eth.usd"/></td>
+                            </tr>
+                            <tr style="text-align:center">
+                                <td><i> ETH-EUR</i></td>
+                                <td><span ng-bind="gdax.eth.eur"/></td>
+                                <td><span id="etheurB"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/exchange.service.js"></script>
+    <script src="js/controllers/exchange.controller.js"></script>
+</body>
+</html>
