@@ -6,8 +6,10 @@ var routes = require('./api/routes');
 app.use('/', express.static(__dirname + '/public'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
-app.listen(3000, 'localhost', function() {
-    console.log('server is listening');
+var port = process.env.PORT || 3000;
+
+app.listen(port, function() {
+    console.log('server is listening at port: '+ port);
 });
 
 // Add middleware to console log every request
